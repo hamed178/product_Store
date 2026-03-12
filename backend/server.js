@@ -12,7 +12,7 @@ const app = express();
 
 app.use(
   cors({
-    origin: "http://localhost:5173",
+    origin: "https://product-store-six-virid.vercel.app",
   }),
 );
 
