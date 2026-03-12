@@ -7,7 +7,7 @@ export default defineConfig({
   server: {
     proxy: {
       "/api": {
-        target: "http://localhost:5000",
+        target: "https://product-store-api-alpha.vercel.app/",
         changeOrigin: true, // Recommended for most backends
         // Optional: log proxy activity
         configure: (proxy, options) => {
