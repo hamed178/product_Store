@@ -10,7 +10,7 @@ export const useProductStore = create((set) => ({
       return { success: false, message: "please fill in all filds" };
     }
     const res = await fetch(
-      "https://product-store-3v64696tb-hamedhussein004-3929s-projects.vercel.app/api/products",
+      "https://product-store-mz79.vercel.app/api/products",
       {
         method: "POST",
         headers: {
@@ -28,14 +28,14 @@ export const useProductStore = create((set) => ({
   },
   fetchProducts: async () => {
     const res = await fetch(
-      "https://product-store-3v64696tb-hamedhussein004-3929s-projects.vercel.app/api/products",
+      "https://product-store-mz79.vercel.app/api/products",
     );
     const data = await res.json();
     set({ products: data.data.data });
   },
   deleteProduct: async (id) => {
     const res = await fetch(
-      `https://product-store-3v64696tb-hamedhussein004-3929s-projects.vercel.app/api/products/${id}`,
+      `https://product-store-mz79.vercel.app/api/products/${id}`,
       {
         method: "DELETE",
       },
@@ -51,7 +51,7 @@ export const useProductStore = create((set) => ({
   },
   updateProduct: async (id, updatedProduct) => {
     const res = await fetch(
-      `https://product-store-3v64696tb-hamedhussein004-3929s-projects.vercel.app/api/products/${id}`,
+      `https://product-store-mz79.vercel.app/api/products/${id}`,
       {
         method: "PATCH",
         headers: {
