@@ -9,13 +9,16 @@ export const useProductStore = create((set) => ({
     if (!newProduct.name || !newProduct.image || !newProduct.price) {
       return { success: false, message: "please fill in all filds" };
     }
-    const res = await fetch("/api/products", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
+    const res = await fetch(
+      "https://product-store-3v64696tb-hamedhussein004-3929s-projects.vercel.app/api/products",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(newProduct),
       },
-      body: JSON.stringify(newProduct),
-    });
+    );
     const data = await res.json();
     set((state) => ({
       products: [...state.products, data.data.data],
@@ -24,14 +27,19 @@ export const useProductStore = create((set) => ({
     return { success: true, message: "Product created " };
   },
   fetchProducts: async () => {
-    const res = await fetch("/api/products");
+    const res = await fetch(
+      "https://product-store-3v64696tb-hamedhussein004-3929s-projects.vercel.app/api/products",
+    );
     const data = await res.json();
     set({ products: data.data.data });
   },
   deleteProduct: async (id) => {
-    const res = await fetch(`/api/products/${id}`, {
-      method: "DELETE",
-    });
+    const res = await fetch(
+      `https://product-store-3v64696tb-hamedhussein004-3929s-projects.vercel.app/api/products/${id}`,
+      {
+        method: "DELETE",
+      },
+    );
     const data = await res.json();
     if (data.success) {
       set((state) => ({
@@ -42,13 +50,16 @@ export const useProductStore = create((set) => ({
     return { success: false, message: data.status };
   },
   updateProduct: async (id, updatedProduct) => {
-    const res = await fetch(`/api/products/${id}`, {
-      method: "PATCH",
-      headers: {
-        "Content-Type": "application/json",
+    const res = await fetch(
+      `https://product-store-3v64696tb-hamedhussein004-3929s-projects.vercel.app/api/products/${id}`,
+      {
+        method: "PATCH",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(updatedProduct),
       },
-      body: JSON.stringify(updatedProduct),
-    });
+    );
     const data = await res.json();
     if (data.status === "success") {
       set((state) => ({

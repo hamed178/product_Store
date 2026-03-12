@@ -12,7 +12,8 @@ const app = express();
 
 app.use(
   cors({
-    origin: "https://product-store-six-virid.vercel.app",
+    origin:
+      "https://product-store-56i76bnhx-hamedhussein004-3929s-projects.vercel.app",
   }),
 );
 
