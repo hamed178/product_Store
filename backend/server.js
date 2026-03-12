@@ -13,7 +13,7 @@ const app = express();
 app.use(
   cors({
     origin:
-      "https://product-store-56i76bnhx-hamedhussein004-3929s-projects.vercel.app",
+      "https://product-store-git-main-hamedhussein004-3929s-projects.vercel.app/",
   }),
 );
 
