@@ -13,7 +13,7 @@ const app = express();
 app.use(
   cors({
     origin: "https://product-store-six-virid.vercel.app",
-    methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+    methods: ["GET", "POST", "PATCH", "DELETE", "OPTIONS"],
   }),
 );
 
